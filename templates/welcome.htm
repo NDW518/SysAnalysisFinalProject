@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Panther Hotel</title>
+    <!-- <link href="{{	url_for('static',	filename='hotel_stylesheet.css')	}}" rel="stylesheet" />  -->
 </head>
 <body>
-    <h2>Welcome to the Panther Hotel! Please select your action:</h2>
-    <a href=bookaroom><button>Book a Room</button></a>
-    <a href=login><button>Manager Log In</button></a>
+{% extends "bootstrap/base.html" %}
+    {% block content %}
+    <img src="{{url_for('static', filename='Panther_Hotel.png')}}"/>
+    <h2>Welcome to the Panther Hotel! How can we help you?</h2>
+    <a href=bookaroom><button type="button" class="btn btn-primary">Book a Room</button></a>
+    <a href=login><button type="button" class="btn btn-primary">Manager Log In</button></a>
+    {% endblock %}
 </body>
 </html>
