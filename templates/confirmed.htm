@@ -5,14 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation Page</title>
-    <link href="{{	url_for('static',	filename='hotel_stylesheet.css')	}}" rel="stylesheet" /> 
 </head>
 <body>
-    <h2>Dear {{name}}:</h2>
-    <h3>Thank you for choosing Panther Hotel. We are pleased to confirm your room reservation from {{checkin}} to {{checkout}}.</h3>
-    <br>
-    <h3>We look forward to seeing you soon!</h3>
-    <br>
-    <a href='/'><button>Return to Home</button></a>
+    {% extends "bootstrap/base.html" %}
+    {% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 align-self-center text-center">
+                <img src="{{url_for('static', filename='Panther_Hotel.png')}}"/>                        
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h2>Dear <i>{{name}}</i>,</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Thank you for choosing Panther Hotel!</h2>
+                <br>
+                <h3>We are pleased to confirm your room reservation from <b>{{checkin}}</b> to <b>{{checkout}}</b>.</h3>
+                <br>
+                <h3>We look forward to seeing you soon!</h3>
+                <br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href='/'><button type="button" class="btn btn-primary">Return to Home</button></a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
 </body>
 </html>

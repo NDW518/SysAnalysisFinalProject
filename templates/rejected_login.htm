@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Denied!</title>
-    <link href="{{	url_for('static',	filename='hotel_stylesheet.css')	}}" rel="stylesheet" /> 
 </head>
 <body>
-    <h1>{{name}} is not a valid user or incorrect password, please try again.</h1>
+    {% extends "bootstrap/base.html" %}
+    {% block content %}
+    <h1 style="margin-left: 15px;"><b>ERROR:</b> Could not sign in</h1>
+    <h3 style="margin-left: 15px;"><i>{{name}} is not a valid user or there was an incorrect password. Please try again.</i></h3>
+    {% endblock %}
 </body>
 </html>

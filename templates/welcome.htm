@@ -5,15 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Panther Hotel</title>
-    <!-- <link href="{{	url_for('static',	filename='hotel_stylesheet.css')	}}" rel="stylesheet" />  -->
 </head>
 <body>
-{% extends "bootstrap/base.html" %}
-    {% block content %}
-    <img src="{{url_for('static', filename='Panther_Hotel.png')}}"/>
-    <h2>Welcome to the Panther Hotel! How can we help you?</h2>
-    <a href=bookaroom><button type="button" class="btn btn-primary">Book a Room</button></a>
-    <a href=login><button type="button" class="btn btn-primary">Manager Log In</button></a>
-    {% endblock %}
+    {% extends "bootstrap/base.html" %}
+        {% block content %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 align-self-center text-center">
+                        <img src="{{url_for('static', filename='Panther_Hotel.png')}}"/>                        
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 align-self-center text-center">
+                        <h2>Welcome to the Panther Hotel! How can we help you?</h2>                 
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 align-self-center text-right">
+                        <a href=bookaroom><button type="button" class="btn btn-primary">Book a Room</button></a>
+                    </div>
+
+                    <div class="col-lg-6 align-self-center text-left">
+                        <a href=login><button type="button" class="btn btn-primary">Manager Log In</button></a>
+                    </div>
+                </div>
+            <div>
+        {% endblock %}
 </body>
 </html>

@@ -27,8 +27,7 @@ def addbookingrecord():
             cur = conn.cursor()
             cur.execute(cmd)
             conn.commit()
-            # msg = "Customer data successfully saved."
-            return render_template("confirmed.htm", name=name, checkin=checkin, checkout=checkout) #, msg = msg
+            return render_template("confirmed.htm", name=name, checkin=checkin, checkout=checkout)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -36,7 +35,6 @@ def login():
         user = request.form['username']
         pswd = request.form['password']
         if user == 'manager' and pswd == 'hotelManager18':
-#            return render_template('list_bookings.htm', name=user)
                 conn = sql.connect("database.db")
                 conn.row_factory = sql.Row
 
