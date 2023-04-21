@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserve a Room</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
+
 <body>
     {% extends "bootstrap/base.html" %}
     {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                    <form action="{{url_for('addbookingrecord')}}" method = "POST">
-                        <h1>Reserve a Room</h1>
-                        Name<br>
-                        <input type="text" name="name"/><br>
-                        Check-in Date<br>
-                        <input type="date" name="checkin"/><br>
-                        Check-out Date<br>
-                        <input type="date" name="checkout"/><br>
-                        Room Type<br>
-                        <input type="text" name="roomtype"/><br>
-                        
-                        <button type="submit" class="btn btn-primary">Sign In</button>
-                    </form>
+            <div class="col-lg-12 text-left">
+                <form action="{{url_for('addbookingrecord')}}" method="POST">
+
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h1>Reserve a Room</h1>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <input type="text" placeholder="Name" name="name" class="form-control"/>                      
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-6 text-center">
+                            <input type="date" placeholder="Check-In Date" name="checkin" class="form-control"/>                    
+                        </div>
+
+                        <div class="col-lg-6 text-center">
+                            <input type="date" placeholder="Check-Out Date" name="checkout" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col-lg-7 offset-lg-5">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roomtype" id="roomtype1" value="Single" checked>
+                                <label class="form-check-label" for="roomtype1" style= "margin-left: 30px">
+                                    Single ($40/Night)
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roomtype" id="roomtype2" value="Double">
+                                <label class="form-check-label" for="roomtype2" style= "margin-left: 30px">
+                                    Double ($60/Night)
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roomtype" id="roomtype3" value="Queen">
+                                <label class="form-check-label" for="roomtype3" style= "margin-left: 30px">
+                                    Queen ($80/Night)
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roomtype" id="roomtype4" value="King">
+                                <label class="form-check-label" for="roomtype4" style= "margin-left: 30px">
+                                    King ($100/Night)
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="roomtype" id="roomtype5" value="Suite with Balcony">
+                                <label class="form-check-label" for="roomtype5" style= "margin-left: 30px">
+                                    Suite with Balcony ($150/Night)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <button type="submit" class="btn btn-primary">Reserve</button>                    
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     {% endblock %}
 </body>
+
 </html>
